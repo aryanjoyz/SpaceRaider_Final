@@ -62,7 +62,6 @@ public class Game extends Canvas implements Runnable {
 	}
 
 	public void run() {
-		requestFocus();
 		init();
 		long lastTime = System.nanoTime();
 		final double amountOfTicks = 60.0;
@@ -122,14 +121,14 @@ public class Game extends Canvas implements Runnable {
 		} else if (key == KeyEvent.VK_LEFT){
 			p.setX(p.getX() - 5);
 		} else if (key == KeyEvent.VK_UP){
-			p.setY(p.getY() - 5);
-		}else if (key == KeyEvent.VK_DOWN){
 			p.setY(p.getY() + 5);
+		}else if (key == KeyEvent.VK_DOWN){
+			p.setY(p.getY() - 5);
 		}
 	}
 	
 	public void keyReleased(KeyEvent e){
- 
+
 	}	
 	public static void main(String args[]){
 		Game game = new Game();

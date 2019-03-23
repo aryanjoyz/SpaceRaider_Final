@@ -18,7 +18,7 @@ public class Player {
 		this.y = y;
 		
 		SpriteSheet ss = new SpriteSheet(game.getSpriteSheet());
-		player = ss.grabImage(1, 1, 32, 32);
+		player = ss.grabImage(1, 1, 45, 45);
 	}
 	
 	public void tick(){
@@ -27,12 +27,12 @@ public class Player {
 		
 		if(x <= 0)
 			x = 0;
-		if(x >= 640 - 16)
-			x = 640 - 16;
+		if(x >= 640)
+			x = 640;
 		if (y <= 0)
 			y = 0;
-		if (y >= 480 - 32)
-			y = 480 - 32;
+		if (y >= 480)
+			y = 480;
 	}
 	
 	public void render(Graphics g){

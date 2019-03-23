@@ -27,16 +27,16 @@ public class Player {
 		
 		if(x <= 0)
 			x = 0;
-		if(x >= 640 - 16)
-			x = 640 - 16;
+		if(x >= 640)
+			x = 640;
 		if (y <= 0)
 			y = 0;
-		if (y >= 480 - 32)
-			y = 480 - 32;
+		if (y >= 480)
+			y = 480;
 	}
 	
 	public void render(Graphics g){
-		g.drawImage(player, (int)x, (int)y, null);
+		g.drawImage(player, 20, 20, null);
 	}
 	
 	public double getX(){
