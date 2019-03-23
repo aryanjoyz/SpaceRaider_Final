@@ -116,13 +116,13 @@ public class Game extends Canvas implements Runnable {
 	public void keyPressed(KeyEvent e){
 		int key = e.getKeyCode();
 		
-		if(key == KeyEvent.VK_RIGHT){
+		if(key == KeyEvent.VK_D){
 			p.setX(p.getX() + 5);
-		} else if (key == KeyEvent.VK_LEFT){
+		} else if (key == KeyEvent.VK_A){
 			p.setX(p.getX() - 5);
-		} else if (key == KeyEvent.VK_UP){
+		} else if (key == KeyEvent.VK_W){
 			p.setY(p.getY() + 5);
-		}else if (key == KeyEvent.VK_DOWN){
+		}else if (key == KeyEvent.VK_S){
 			p.setY(p.getY() - 5);
 		}
 	}
@@ -130,13 +130,13 @@ public class Game extends Canvas implements Runnable {
 	public void keyReleased(KeyEvent e){
 		int key = e.getKeyCode();
 		
-		if(key == KeyEvent.VK_RIGHT){
+		if(key == KeyEvent.VK_D){
 			p.setX(0);
-		} else if (key == KeyEvent.VK_LEFT){
+		} else if (key == KeyEvent.VK_A){
 			p.setX(0);
-		} else if (key == KeyEvent.VK_UP){
+		} else if (key == KeyEvent.VK_W){
 			p.setY(0);
-		}else if (key == KeyEvent.VK_DOWN){
+		}else if (key == KeyEvent.VK_S){
 			p.setY(0);
 		}
 	}	

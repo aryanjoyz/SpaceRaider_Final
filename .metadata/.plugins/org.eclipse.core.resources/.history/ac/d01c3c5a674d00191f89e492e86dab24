@@ -3,7 +3,6 @@ package com.game.src.main;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -33,9 +32,6 @@ public class Game extends Canvas implements Runnable {
 		} catch (IOException e){
 			e.printStackTrace();
 		}
-		
-		addKeyListener(new KeyInput(this));
-		
 		p = new Player(200,200,this);
 	}
 	
@@ -112,34 +108,6 @@ public class Game extends Canvas implements Runnable {
 		g.dispose();
 		bs.show();
 	}
-	
-	public void keyPressed(KeyEvent e){
-		int key = e.getKeyCode();
-		
-		if(key == KeyEvent.VK_RIGHT){
-			p.setX(p.getX() + 5);
-		} else if (key == KeyEvent.VK_LEFT){
-			p.setX(p.getX() - 5);
-		} else if (key == KeyEvent.VK_UP){
-			p.setY(p.getY() + 5);
-		}else if (key == KeyEvent.VK_DOWN){
-			p.setY(p.getY() - 5);
-		}
-	}
-	
-	public void keyReleased(KeyEvent e){
-		int key = e.getKeyCode();
-		
-		if(key == KeyEvent.VK_RIGHT){
-			p.setX(0);
-		} else if (key == KeyEvent.VK_LEFT){
-			p.setX(0);
-		} else if (key == KeyEvent.VK_UP){
-			p.setY(0);
-		}else if (key == KeyEvent.VK_DOWN){
-			p.setY(0);
-		}
-	}	
 	public static void main(String args[]){
 		Game game = new Game();
 		
