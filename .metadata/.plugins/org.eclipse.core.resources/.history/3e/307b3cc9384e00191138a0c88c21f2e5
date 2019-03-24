@@ -64,8 +64,8 @@ public class Game extends Canvas implements Runnable {
 		
 		
 		t = new Textures(this);
+		p = new Player(200,200,t);
 		c = new Controller(t, this);
-		p = new Player(200,200,t, this, c);
 		menu = new Menu();
 		
 		

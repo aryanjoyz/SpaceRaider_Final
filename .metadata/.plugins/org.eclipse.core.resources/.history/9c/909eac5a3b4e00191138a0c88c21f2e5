@@ -52,13 +52,22 @@ public class Player extends GameObject implements Entity1 {
 				c.removeEntity(tempEnt);
 				game.HEALTH -= 10;
 				game.setEnemyKilled(game.getEnemyKilled() + 1);
+			} else if (game.HEALTH == 0){
+				BufferedImageLoader loader = new BufferedImageLoader();
+				try{
+					gameOver = loader.loadImage("/gameover.png");
+				} catch (IOException e){
+					e.printStackTrace();
+				}
 			}
 		}
+		
 		animate.runAnimation();
 	}
 	
 	public void render(Graphics g){
 		animate.drawAnimation(g, x, y, 0);	
+		g.drawImage(gameOver, 75, 75, null);
 		}
 	
 	public Rectangle getBounds(){
