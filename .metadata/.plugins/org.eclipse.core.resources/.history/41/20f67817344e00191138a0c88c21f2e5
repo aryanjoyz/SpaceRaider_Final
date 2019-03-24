@@ -43,12 +43,12 @@ public class Game extends Canvas implements Runnable {
 	
 	private Menu menu;
 	
-	public static enum STATE{
+	private enum STATE{
 		MENU,
 		GAME
 	};
 	
-	public static STATE State = STATE.MENU;
+	private STATE State = STATE.MENU;
 	
 	public void init(){
 		BufferedImageLoader loader = new BufferedImageLoader();
@@ -70,8 +70,7 @@ public class Game extends Canvas implements Runnable {
 		e1 = c.getEntity1();
 		e2 = c.getEntity2();
 		
-		this.addKeyListener(new KeyInput(this));
-		this.addMouseListener(new MouseInput());
+		addKeyListener(new KeyInput(this));
 	}
 	
 	private synchronized void start(){

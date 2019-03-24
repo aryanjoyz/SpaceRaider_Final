@@ -70,8 +70,7 @@ public class Game extends Canvas implements Runnable {
 		e1 = c.getEntity1();
 		e2 = c.getEntity2();
 		
-		this.addKeyListener(new KeyInput(this));
-		this.addMouseListener(new MouseInput());
+		addKeyListener(new KeyInput(this));
 	}
 	
 	private synchronized void start(){
