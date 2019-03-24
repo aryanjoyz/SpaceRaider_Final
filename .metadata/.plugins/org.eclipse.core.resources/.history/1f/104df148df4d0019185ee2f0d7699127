@@ -142,7 +142,7 @@ public class Game extends Canvas implements Runnable {
 	}
 	
 	public void keyReleased(KeyEvent e){
-		int key = e.getKeyCode();
+int key = e.getKeyCode();
 		
 		if(key == KeyEvent.VK_RIGHT){
 			p.setVelX(0);
@@ -153,7 +153,7 @@ public class Game extends Canvas implements Runnable {
 		}else if (key == KeyEvent.VK_DOWN){
 			p.setVelY(0);
 		}
-		else if (key == KeyEvent.VK_SPACE){
+		else if (key == KeyEvent.VK_SPACE && !is_shooting){
 			is_shooting = false;
 		}
 	}	
