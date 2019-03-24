@@ -1,0 +1,19 @@
+package com.game.src.main;
+
+import java.awt.image.BufferedImage;
+
+public class Textures {
+
+		public BufferedImage player, bullet, enemy;
+		private SpriteSheet ss;
+		
+		public Textures(Game game){
+			SpriteSheet ss = new SpriteSheet(game.getSpriteSheet());
+			
+			getTextures();
+		}
+		
+		private void getTextures(){
+			
+		}
+}

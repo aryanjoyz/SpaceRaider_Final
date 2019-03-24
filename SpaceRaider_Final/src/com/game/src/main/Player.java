@@ -11,16 +11,16 @@ public class Player {
 	private double velX = 0;
 	private double velY = 0;
 	
-	private BufferedImage player;
+	private Textures t;
 	
-	public Player(double x, double y, Game game){
+	public Player(double x, double y, Textures t){
 		this.x = x;
 		this.y = y;
+		this.t = t;
 		
-		SpriteSheet ss = new SpriteSheet(game.getSpriteSheet());
-		player = ss.grabImage(1, 1, 32, 32);
 	}
 	
+
 	public void tick(){
 		x += velX;
 		y += velY;
@@ -36,7 +36,7 @@ public class Player {
 	}
 	
 	public void render(Graphics g){
-		g.drawImage(player, (int)x, (int)y, null);
+		g.drawImage(t.player, (int)x, (int)y, null);
 	}
 	
 	public double getX(){
