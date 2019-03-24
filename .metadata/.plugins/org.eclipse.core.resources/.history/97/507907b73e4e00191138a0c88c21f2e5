@@ -71,6 +71,7 @@ public class Player extends GameObject implements Entity1 {
 				g.setColor(Color.WHITE);
 				g.drawString("GAME OVER", Game.WIDTH / 2, 200);
 				animate.drawAnimation(g, x, y, 0);
+				menu.render(g);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

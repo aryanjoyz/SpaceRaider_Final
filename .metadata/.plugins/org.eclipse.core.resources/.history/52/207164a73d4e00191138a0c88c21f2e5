@@ -65,12 +65,13 @@ public class Player extends GameObject implements Entity1 {
 		animate.drawAnimation(g, x, y, 0);	 
 		if (game.HEALTH == 0){
 			try {
-				Thread.sleep(1000);
 				Font font = new Font("times new roman", Font.BOLD, 50);
 				g.setFont(font);
 				g.setColor(Color.WHITE);
-				g.drawString("GAME OVER", Game.WIDTH / 2, 200);
-				animate.drawAnimation(g, x, y, 0);
+				g.drawString("GAME OVER", Game.WIDTH / 2, 100);
+				Thread.sleep(3000);
+				menu.render(g);
+				animate.drawAnimation(g, x, y, 0);	
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

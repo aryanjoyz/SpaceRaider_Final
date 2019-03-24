@@ -22,14 +22,12 @@ public class Player extends GameObject implements Entity1 {
 	Game game;
 	Controller c;
 	Animation animate;
-	Menu menu;
 	
-	public Player(double x, double y, Textures t, Game game, Controller c, Menu menu){
+	public Player(double x, double y, Textures t, Game game, Controller c){
 		super(x,y);
 		this.t = t;
 		this.game = game;
 		this.c = c;
-		this.menu = menu;
 		
 		animate = new Animation(1, t.player[0], t.player[1], t.player[2]);
 	
@@ -62,18 +60,13 @@ public class Player extends GameObject implements Entity1 {
 	}
 	
 	public void render(Graphics g){
-		animate.drawAnimation(g, x, y, 0);	 
+		animate.drawAnimation(g, x, y, 0);	
+		
 		if (game.HEALTH == 0){
-			try {
-				Thread.sleep(1000);
-				Font font = new Font("times new roman", Font.BOLD, 50);
-				g.setFont(font);
-				g.setColor(Color.WHITE);
-				g.drawString("GAME OVER", Game.WIDTH / 2, 200);
-				animate.drawAnimation(g, x, y, 0);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			Font font = new Font("times new roman", Font.BOLD, 50);
+			g.setFont(font);
+			g.setColor(Color.WHITE);
+			g.drawString("GAME OVER", Game.WIDTH / 2, 100);
 		}
 	}
 	

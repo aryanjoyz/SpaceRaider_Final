@@ -70,7 +70,7 @@ public class Player extends GameObject implements Entity1 {
 				g.setFont(font);
 				g.setColor(Color.WHITE);
 				g.drawString("GAME OVER", Game.WIDTH / 2, 200);
-				animate.drawAnimation(g, x, y, 0);
+				animate.drawAnimation(g, x, y, 0);	
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
