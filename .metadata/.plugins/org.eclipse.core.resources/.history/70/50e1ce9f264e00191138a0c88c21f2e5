@@ -23,7 +23,9 @@ public class Bullet extends GameObject implements Entity1 {
 	
 	public void tick(){
 		y-=1;
-
+		if(Physics.Collision(this, game.e2)){
+			System.out.println("COLLIDE");
+		}
 		animate.runAnimation();
 	}
 	

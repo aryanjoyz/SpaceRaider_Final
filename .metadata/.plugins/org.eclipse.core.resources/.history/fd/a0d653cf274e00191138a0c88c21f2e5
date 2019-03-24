@@ -21,7 +21,7 @@ public class Enemy extends GameObject implements Entity2 {
 		this.t = t;
 		this.c = c;
 		this.game = game;
-		animate = new Animation(1, t.enemy[0], t.enemy[1], t.enemy[2]);
+		animate = new Animation(5, t.enemy[0], t.enemy[1], t.enemy[2]);
 
 	}
 	
@@ -35,7 +35,6 @@ public class Enemy extends GameObject implements Entity2 {
 		
 		if (Physics.Collision(this, game.e1)){
 			c.removeEntity(this);
-			game.setEnemyKilled(game.getEnemyKilled() + 1);
 		}
 		animate.runAnimation();
 

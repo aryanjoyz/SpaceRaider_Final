@@ -119,12 +119,6 @@ public class Game extends Canvas implements Runnable {
 	private void tick() {
 		p.tick();
 		c.tick();
-		
-		if(enemyKilled >= enemyCount){
-			enemyCount += 2;
-			enemyKilled = 0;
-			c.createEnemy(enemyCount);
-		}
 	}
 	
 	private void render() {

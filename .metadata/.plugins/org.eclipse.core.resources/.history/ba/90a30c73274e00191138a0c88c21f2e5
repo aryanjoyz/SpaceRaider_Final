@@ -54,7 +54,7 @@ public class Game extends Canvas implements Runnable {
 		t = new Textures(this);
 		
 		p = new Player(200,200,t);
-		c = new Controller(t, this);
+		c = new Controller(t);
 		c.createEnemy(enemyCount);
 		e1 = c.getEntity1();
 		e2 = c.getEntity2();
@@ -119,12 +119,6 @@ public class Game extends Canvas implements Runnable {
 	private void tick() {
 		p.tick();
 		c.tick();
-		
-		if(enemyKilled >= enemyCount){
-			enemyCount += 2;
-			enemyKilled = 0;
-			c.createEnemy(enemyCount);
-		}
 	}
 	
 	private void render() {

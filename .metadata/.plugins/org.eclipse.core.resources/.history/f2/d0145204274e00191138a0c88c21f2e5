@@ -12,16 +12,12 @@ public class Enemy extends GameObject implements Entity2 {
 	Random r = new Random();
 	
 	private Textures t;
-	private Game game;
-	private Controller c;
 	Animation animate;
 	
-	public Enemy(double x, double y, Textures t, Controller c, Game game){
+	public Enemy(double x, double y, Textures t){
 		super(x,y);
 		this.t = t;
-		this.c = c;
-		this.game = game;
-		animate = new Animation(1, t.enemy[0], t.enemy[1], t.enemy[2]);
+		animate = new Animation(5, t.enemy[0], t.enemy[1], t.enemy[2]);
 
 	}
 	
@@ -31,11 +27,6 @@ public class Enemy extends GameObject implements Entity2 {
 		if (y > (Game.HEIGHT * Game.SCALE)){
 			x =r.nextInt(640);
 			y = -10;
-		}
-		
-		if (Physics.Collision(this, game.e1)){
-			c.removeEntity(this);
-			game.setEnemyKilled(game.getEnemyKilled() + 1);
 		}
 		animate.runAnimation();
 
