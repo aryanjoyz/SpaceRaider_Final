@@ -16,7 +16,7 @@ public class Bullet extends GameObject implements Entity1 {
 		super(x,y);
 		this.t = t;
 		this.game = game;
-		animate = new Animation(5, t.bullet[0], t.bullet[1], t.bullet[2]);
+		animate = new Animation(5, t.bullet[0], t.bullet[1], t.bluet[2]);
 
 		
 	}

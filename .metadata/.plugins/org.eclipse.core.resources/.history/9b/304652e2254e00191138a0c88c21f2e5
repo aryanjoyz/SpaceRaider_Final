@@ -19,7 +19,7 @@ public class Player extends GameObject implements Entity1 {
 		super(x,y);
 		this.t = t;
 		
-		animate = new Animation(1, t.player[0], t.player[1], t.player[2]);
+		animate = new Animation(1 t.player[0], t.player[1], t.player[2]);
 		
 	}
 	
