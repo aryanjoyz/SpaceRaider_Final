@@ -3,7 +3,7 @@ package com.game.src.main;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
-public class Bullet implements Entity {
+public class Bullet {
 	private double x;
 	private double y;
 	
@@ -27,8 +27,5 @@ public class Bullet implements Entity {
 	public double getY() {
 		return y;
 
-	}
-	public double getX(){
-		return x;
 	}
 }

@@ -3,7 +3,7 @@ package com.game.src.main;
 import java.awt.Graphics;
 import java.util.Random;
 
-public class Enemy implements Entity{
+public class Enemy {
 	private double x;
 	private double y;
 	
@@ -35,8 +35,5 @@ public class Enemy implements Entity{
 	}
 	public double setY(double y){
 		return y;
-	}
-	public double getX(){
-		return x;
 	}
 }
