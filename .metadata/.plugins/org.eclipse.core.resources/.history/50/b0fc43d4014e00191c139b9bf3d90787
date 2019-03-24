@@ -1,13 +1,10 @@
 package com.game.src.main;
 
 import java.awt.Graphics;
-import java.util.Random;
 
 public class Enemy {
 	private double x;
 	private double y;
-	
-	Random r = new Random();
 	
 	private Textures t;
 	
@@ -18,12 +15,7 @@ public class Enemy {
 	}
 	
 	public void tick(){
-		y += 0.1;
-		
-		if (y > (Game.HEIGHT * Game.SCALE)){
-			y = 0;
-			x =r.nextInt(Game.WIDTH * Game.SCALE);
-		}
+		y += 0.3;
 	}
 	
 	public void render(Graphics g){

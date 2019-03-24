@@ -2,13 +2,10 @@ package com.game.src.main;
 
 import java.awt.Graphics;
 import java.util.LinkedList;
-import java.util.Random;
 
 public class Controller {
 	private LinkedList<Bullet> b = new LinkedList<Bullet>();
 	private LinkedList<Enemy> e = new LinkedList<Enemy>();
-	
-	Random r = new Random();
 	
 	Bullet TempBullet;
 	Enemy TempEnemy;
@@ -20,7 +17,7 @@ public class Controller {
 		this.t= t;
 		
 		for(int x = 0; x < (Game.WIDTH * Game.SCALE); x += 64){
-			addEnemy(new Enemy(r.nextInt(Game.WIDTH * Game.SCALE), 0, t));
+			addEnemy(new Enemy(100, 0, t));
 		}
 	}
 	
@@ -36,9 +33,8 @@ public class Controller {
 		}
 		for (int i = 0; i < e.size(); i++){
 			TempEnemy = e.get(i);
-			
+			}
 			TempEnemy.tick();
-		}
 	}
 	
 	public void render(Graphics g){
