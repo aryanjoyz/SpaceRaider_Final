@@ -1,0 +1,37 @@
+package com.game.src.main;
+
+import java.awt.Graphics;
+import java.util.Random;
+
+public class Enemy implements Entity{
+	private double x;
+	private double y;
+	
+	Random random = new Random();
+	
+	private Textures t;
+	
+	public Enemy(double x, double y, Textures t){
+		this.x = x;
+		this.y = y;
+		this.t = t;
+	}
+	
+	public void tick(){
+		y += (random.nextInt(3) + 1);
+	}
+	
+	public void render(Graphics g){
+ 
+	}
+	
+	public double getY(){
+		return y;
+	}
+	public double setY(double y){
+		return y;
+	}
+	public double getX(){
+		return x;
+	}
+}

@@ -21,6 +21,9 @@ public class Game extends Canvas implements Runnable {
 	private boolean running = false;
 	private Thread thread;
 	
+	private int enemyCount = 5;
+	private int enemyKilled = 0;
+	
 	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	private BufferedImage spriteSheet = null;
 	private BufferedImage background = null;
@@ -46,6 +49,7 @@ public class Game extends Canvas implements Runnable {
 		
 		p = new Player(200,200,t);
 		c = new Controller(t);
+		c.createEnemy(enemyCount);
 	}
 	
 	private synchronized void start(){
@@ -180,4 +184,21 @@ public class Game extends Canvas implements Runnable {
 	public BufferedImage getSpriteSheet(){
 		return spriteSheet;
 	}
+
+	public int getEnemyCount() {
+		return enemyCount;
+	}
+
+	public void setEnemyCount(int enemyCount) {
+		this.enemyCount = enemyCount;
+	}
+
+	public int getEnemyKilled() {
+		return enemyKilled;
+	}
+
+	public void setEnemyKilled(int enemyKilled) {
+		this.enemyKilled = enemyKilled;
+	}
+	
 }

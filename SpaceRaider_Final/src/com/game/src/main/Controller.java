@@ -1,3 +1,4 @@
+
 package com.game.src.main;
 
 import java.awt.Graphics;
@@ -16,11 +17,15 @@ public class Controller {
 	Random random  = new Random();
 	
 	public Controller(Textures t){
-		for(int i = 0; i < 20; i++)
-		addEntity(new Enemy(random.nextInt(640),10,t));
+		this.t = t;
 		
 	}
 	
+	public void createEnemy(int enemyCount){
+		for(int i = 0; i < enemyCount; i++){
+			addEntity(new Enemy(random.nextInt(640), -10, t));
+		}
+	}
 	
 	public void tick(){
 		for (int i = 0; i < e.size(); i++){
