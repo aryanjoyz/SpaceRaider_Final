@@ -1,0 +1,32 @@
+package com.game.src.main;
+
+import java.awt.Graphics;
+
+import com.game.src.main.classes.Entity1;
+
+public class Bullet extends GameObject implements Entity1 {
+
+	private Textures t;
+	
+	public Bullet(double x, double y, Textures t){
+		super(x,y);
+		this.t = t;
+		
+	}
+	
+	public void tick(){
+		y-=1;
+	}
+	
+	public void render(Graphics g){
+		g.drawImage(t.bullet, (int)x, (int)y, null);
+	}
+
+	public double getY() {
+		return y;
+
+	}
+	public double getX(){
+		return x;
+	}
+}

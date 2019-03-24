@@ -1,12 +1,11 @@
 package com.game.src.main;
 
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
+import java.awt.Rectangle;
 
-public class Player {
+import com.game.src.main.classes.Entity1;
 
-	private double x;
-	private double y;
+public class Player extends GameObject implements Entity1 {
 	
 	private double velX = 0;
 	private double velY = 0;
@@ -14,8 +13,7 @@ public class Player {
 	private Textures t;
 	
 	public Player(double x, double y, Textures t){
-		this.x = x;
-		this.y = y;
+		super(x,y);
 		this.t = t;
 		
 	}
@@ -37,6 +35,10 @@ public class Player {
 	
 	public void render(Graphics g){
 		g.drawImage(t.player, (int)x, (int)y, null);
+	}
+	
+	public Rectangle getBounds(){
+		return new Rectangle((int)x, (int)y, 32, 32);
 	}
 	
 	public double getX(){
