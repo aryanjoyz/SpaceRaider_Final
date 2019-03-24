@@ -25,6 +25,7 @@ public class Game extends Canvas implements Runnable {
 	private BufferedImage spriteSheet = null;
 	
 	private Player p;
+	private Controller c;
 	
 	public void init(){
 		BufferedImageLoader loader = new BufferedImageLoader();
@@ -37,6 +38,7 @@ public class Game extends Canvas implements Runnable {
 		addKeyListener(new KeyInput(this));
 		
 		p = new Player(200,200,this);
+		c = new Controller(this);
 	}
 	
 	private synchronized void start(){
@@ -95,6 +97,7 @@ public class Game extends Canvas implements Runnable {
 	
 	private void tick() {
 		p.tick();
+		c.tick();
 	}
 	
 	private void render() {
@@ -109,6 +112,7 @@ public class Game extends Canvas implements Runnable {
 		
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
 		p.render(g);
+		c.render(g);
 		
 		g.dispose();
 		bs.show();
@@ -118,13 +122,16 @@ public class Game extends Canvas implements Runnable {
 		int key = e.getKeyCode();
 		
 		if(key == KeyEvent.VK_RIGHT){
-			p.setX(p.getX() + 5);
+			p.setVelX(1);
 		} else if (key == KeyEvent.VK_LEFT){
-			p.setX(p.getX() - 5);
+			p.setVelX(-1);
 		} else if (key == KeyEvent.VK_UP){
-			p.setY(p.getY() - 5);
+			p.setVelY(-1);
 		}else if (key == KeyEvent.VK_DOWN){
-			p.setY(p.getY() + 5);
+			p.setVelY(1);
+		}
+		else if (key == KeyEvent.VK_SPACE){
+			c.addBullet(new Bullet(p.getX(), p.getY(), this));
 		}
 	}
 	
